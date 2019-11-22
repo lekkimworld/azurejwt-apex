@@ -22,7 +22,7 @@ final String access_token = AzureJWTBearerFlow.getAccessToken(azureClientId, azu
 
 // use the access token
 HttpRequest req = new HttpRequest();
-req.setEndpoint('https://mheisterberg-functions-demo.azurewebsites.net/api/MyFunction?name=Salesforce');
+req.setEndpoint('https://foo-functions-demo.azurewebsites.net/api/MyFunction?name=Salesforce');
 req.setMethod('GET');
 req.setHeader('Authorization', 'Bearer ' + access_token);
 Http http = new Http();
