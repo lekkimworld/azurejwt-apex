@@ -28,7 +28,7 @@ public class AzureJWT {
         JSONGenerator header = JSON.createGenerator(false);
         header.writeStartObject();
         header.writeStringField('alg', this.alg);
-        header.writeStringField('x5t', this.x5t);
+        if (!String.isEmpty(this.x5t)) header.writeStringField('x5t', this.x5t);
         header.writeEndObject();
         String encodedHeader = base64URLencode(Blob.valueOf(header.getAsString()));
         
